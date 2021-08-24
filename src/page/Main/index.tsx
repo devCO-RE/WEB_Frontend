@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Layout } from "../../components/basis";
-import { MaterialListTemplate } from "../../components/template";
+import { ReceivedMaterialList } from "../../components/template";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,7 +14,7 @@ function Main() {
   return (
     <div className={classes.root}>
       <Layout />
-      <MaterialListTemplate />
+      <ReceivedMaterialList />
     </div>
   );
 }

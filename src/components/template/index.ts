@@ -1,1 +1,2 @@
-export { default as MaterialListTemplate } from './MaterialListTemplate';
+export { default as ReceivedMaterialList } from './ReceivedMaterialList';
+export { default as SentMaterialList } from './SentMaterialList';

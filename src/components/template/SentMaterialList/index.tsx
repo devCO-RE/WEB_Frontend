@@ -1,8 +1,7 @@
 import React from "react";
-import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Container, Grid, Paper, Link } from "@material-ui/core";
-import { Chart, Deposits, MaterialTable } from "../../organisms";
+import { MaterialTable } from "../../organisms";
 
 function Copyright() {
   return (
@@ -43,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function MaterialListTemplate() {
+export default function SentMaterialList() {
   const classes = useStyles();
 
   return (
@@ -51,17 +50,6 @@ export default function MaterialListTemplate() {
       <div className={classes.appBarSpacer} />
       <Container maxWidth="lg" className={classes.container}>
         <Grid container spacing={1}>
-          {/* <Grid item xs={12} md={8} lg={9}>
-            <Paper className={fixedHeightPaper}>
-              <Chart />
-            </Paper>
-          </Grid>
-          <Grid item xs={12} md={4} lg={3}>
-            <Paper className={fixedHeightPaper}>
-              <Deposits />
-            </Paper>
-          </Grid> */}
-
           <Grid item xs={12}>
             <Paper className={classes.paper}>
               <MaterialTable />
