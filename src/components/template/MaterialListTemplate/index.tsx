@@ -36,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     overflow: "auto",
     flexDirection: "column",
+    height: "calc(100vh - 128px)",
   },
   fixedHeight: {
     height: 240,
@@ -45,26 +46,22 @@ const useStyles = makeStyles((theme) => ({
 export default function MaterialListTemplate() {
   const classes = useStyles();
 
-  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
-
   return (
     <main className={classes.content}>
       <div className={classes.appBarSpacer} />
       <Container maxWidth="lg" className={classes.container}>
-        <Grid container spacing={3}>
-          {/* Chart */}
-          <Grid item xs={12} md={8} lg={9}>
+        <Grid container spacing={1}>
+          {/* <Grid item xs={12} md={8} lg={9}>
             <Paper className={fixedHeightPaper}>
               <Chart />
             </Paper>
           </Grid>
-          {/* Recent Deposits */}
           <Grid item xs={12} md={4} lg={3}>
             <Paper className={fixedHeightPaper}>
               <Deposits />
             </Paper>
-          </Grid>
-          {/* Recent Orders */}
+          </Grid> */}
+
           <Grid item xs={12}>
             <Paper className={classes.paper}>
               <MaterialTable />
