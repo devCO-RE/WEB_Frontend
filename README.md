@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+## 시간 관계상 웹페이지 개발이 완료하지 못하여 현재 프로그램 실행이 불가합니다.. 이 점 정말 죄송합니다
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
