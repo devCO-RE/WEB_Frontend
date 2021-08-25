@@ -1,1 +1,2 @@
-export { default as Dashboard } from './Dashboard';
+export { default as ReceivedMaterialList } from './ReceivedMaterialList';
+export { default as SentMaterialList } from './SentMaterialList';
