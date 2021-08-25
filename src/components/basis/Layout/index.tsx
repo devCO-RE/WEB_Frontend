@@ -5,21 +5,16 @@ import {
   CssBaseline,
   Button,
   Drawer,
-  Box,
   AppBar,
   Toolbar,
   List,
   Typography,
   Divider,
   IconButton,
-  Badge,
   withStyles,
   Menu,
   MenuProps,
   MenuItem,
-  Container,
-  Grid,
-  Paper,
   Link,
   ListItemIcon,
   ListItemText,
@@ -30,9 +25,7 @@ import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import DraftsIcon from "@material-ui/icons/Drafts";
 import SendIcon from "@material-ui/icons/Send";
-import NotificationsIcon from "@material-ui/icons/Notifications";
 import { mainListItems, secondaryListItems } from "../../organisms";
-import { Chart, Deposits, MaterialTable } from "../../organisms";
 
 const StyledMenu = withStyles({
   paper: {
@@ -165,7 +158,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Dashboard() {
+export default function Layout() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -183,10 +176,9 @@ export default function Dashboard() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   return (
-    <div className={classes.root}>
+    <>
       <CssBaseline />
       <AppBar
         position="absolute"
@@ -241,11 +233,6 @@ export default function Dashboard() {
               <ListItemText primary="Inbox" />
             </StyledMenuItem>
           </StyledMenu>
-          {/* <IconButton color="inherit">
-            <Badge badgeContent={4} color="secondary">
-              <NotificationsIcon />
-            </Badge>
-          </IconButton> */}
         </Toolbar>
       </AppBar>
       <Drawer
@@ -265,34 +252,6 @@ export default function Dashboard() {
         <Divider />
         <List>{secondaryListItems}</List>
       </Drawer>
-      <main className={classes.content}>
-        <div className={classes.appBarSpacer} />
-        <Container maxWidth="lg" className={classes.container}>
-          <Grid container spacing={3}>
-            {/* Chart */}
-            <Grid item xs={12} md={8} lg={9}>
-              <Paper className={fixedHeightPaper}>
-                <Chart />
-              </Paper>
-            </Grid>
-            {/* Recent Deposits */}
-            <Grid item xs={12} md={4} lg={3}>
-              <Paper className={fixedHeightPaper}>
-                <Deposits />
-              </Paper>
-            </Grid>
-            {/* Recent Orders */}
-            <Grid item xs={12}>
-              <Paper className={classes.paper}>
-                <MaterialTable />
-              </Paper>
-            </Grid>
-          </Grid>
-          <Box pt={4}>
-            <Copyright />
-          </Box>
-        </Container>
-      </main>
-    </div>
+    </>
   );
 }
